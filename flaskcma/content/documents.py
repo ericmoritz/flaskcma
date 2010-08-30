@@ -41,7 +41,7 @@ class Content(Document):
         return model_form(self.__class__)
 
     def linked_content(self, content_types=None):
-        spec = {'links': {'$in': self.links}}
+        spec = {'path': {'$in': self.links}}
 
         # If content types is defined, restrict the query by content types
         if content_types:
